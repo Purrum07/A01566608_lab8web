@@ -56,7 +56,13 @@ class ProductDetail extends React.Component<{}, ProductState> {
                 let sizes = [] as string[];
 
                 if (colors.length  >= 1) {
+                    const selectedColor = colors[0];
                     sizes = helper.getSizes(colors[0]);
+                    if (sizes.length >= 1) {
+                        const selectedSize = sizes[0];
+                        this.setState({selectedSize})
+                    }
+                    this.setState({selectedColor})
                 }
 
                 console.log("Sizes: " + sizes);
