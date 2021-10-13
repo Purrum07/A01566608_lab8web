@@ -38,7 +38,7 @@ class ProductDetail extends React.Component<{}, ProductState> {
      */
     render() {
         return (
-            <ProductInfo product={this.state.product} colors={this.state.colors} selectedColor={this.state.selectedColor} changedColor={this.changedColor} sizes={this.state.sizes} selectedSize={this.state.selectedSize} changedSize={this.changedSize} />
+            <ProductInfo product={this.state.product} helper= {this.state.helper} colors={this.state.colors} selectedColor={this.state.selectedColor} changedColor={this.changedColor} sizes={this.state.sizes} selectedSize={this.state.selectedSize} changedSize={this.changedSize} />
         )
     }
 

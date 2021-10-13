@@ -1,5 +1,6 @@
 import "./index.css";
 import Product from "../../types/Product";
+import ProductHelper from "../../tools/ProductHelper";
 import {
   Grid,
   Paper,
@@ -17,12 +18,14 @@ import React from "react";
 
 interface ProductInfoProps {
   product: Product;
+  helper: ProductHelper;
   colors: string[];
   selectedColor: string;
   changedColor(event: any): void
   sizes: string[];
   selectedSize: string;
   changedSize(event: any): void
+  
 }
 
 /**
@@ -143,7 +146,7 @@ const ProductInfo : React.FC<ProductInfoProps>  = (props) => {
           <Grid item lg={10} />
 
           <Grid item lg={4}>
-            <Button className="cartButton" variant="contained">
+            <Button className="cartButton" variant="contained" onClick= {() => {console.log(props.helper.getSku(props.selectedColor, props.selectedSize))}}>
               Add to Cart
             </Button>
           </Grid>
